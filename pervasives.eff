@@ -74,6 +74,8 @@ external string_length : string -> int = "string_length"
 
 external to_string : 'a -> string  = "to_string"
 
+external int_of_string : string -> int = "int_of_string"
+
 (* Booleans *)
 let not x = if x then false else true
 

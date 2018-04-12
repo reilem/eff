@@ -173,7 +173,9 @@ let conversion_functions =
       in
       from_fun to_string )
   ; ( "float_of_int"
-    , from_fun (fun v -> value_float (float_of_int (V.to_int v))) ) ]
+    , from_fun (fun v -> value_float (float_of_int (V.to_int v))) )
+  ; ( "int_of_string"
+    , from_fun (fun v -> value_int (int_of_string (V.to_str v))) ) ]
 
 
 (** [values] is an association list of external names and values, consisting of
