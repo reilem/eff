@@ -14,6 +14,8 @@ effect Random_int : int -> int
 
 effect Random_float: float -> float
 
+effect System_time : unit -> float
+
 (* Integers and Floats *)
 external ( = ) : 'a -> 'a -> bool = "="
 

@@ -175,6 +175,10 @@ let rec top_handle = function
       let str = read_line () in
       let str_v = V.Const (Const.of_string str) in
       top_handle (k str_v)
+  | V.Call ("System_time", v, k) ->
+      let time = Sys.time () in
+      let time_v = V.Const (Const.of_float time) in
+      top_handle (k time_v)
   | V.Call (eff, v, k) ->
       Error.runtime "uncaught effect %t %t." (Value.print_effect eff)
         (Value.print_value v)
